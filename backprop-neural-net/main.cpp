@@ -1,13 +1,9 @@
-//
-//  main.cpp
-//  backprop-neural-net
-//
-//  Created by Franck-Stephane Ndame Mpouli on 06/12/2019.
-//  Copyright © 2019 Franck-Stephane Ndame Mpouli. All rights reserved.
-//
-
 #include <iostream>
 #include <vector>
+
+class Neuron;
+
+typedef std::vector<Neuron> Layer;
 
 class Network
 {
@@ -20,8 +16,9 @@ public:
     void backPropagate(const std::vector<double> &targets);
     // const qualifiers
     void getResults(std::vector<double> &results) const;
-private:
     
+private:
+    std::vector<Layer> layers;
 };
 
 int main(int argc, const char * argv[]) {
